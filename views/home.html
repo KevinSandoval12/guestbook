@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/mediaqueries.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="icon" href="/img/logo-sqaure.jpg" />
+
+    <title>Email Me!</title>
+  </head>
+  <body>
+    <div id="contact">
+      <div class="contact-container">
+        <form class="contact-form" action="">
+          <h1>Contact Me!</h1>
+          <fieldset>
+            <legend>Personal Information</legend>
+
+            <!-- First and Last Name Row -->
+            <div class="row">
+              <div class="col">
+                <label for="fname">First Name</label>
+                <input
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  placeholder="First Name"
+                />
+              </div>
+              <div class="col">
+                <label for="lname">Last Name</label>
+                <input
+                  type="text"
+                  id="lname"
+                  name="lname"
+                  placeholder="Last Name"
+                />
+              </div>
+            </div>
+
+            <!-- Email Full Width -->
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Address"
+              />
+            </div>
+          </fieldset>
+
+          <!-- How Did We Meet Section -->
+          <fieldset>
+            <legend>How did we meet?</legend>
+            <div class="meet-container">
+              <div class="col">
+                <label for="meet">Please Select</label>
+                <select id="meet" name="meet">
+                  <option value="">Please Select</option>
+                  <option value="linkedin">LinkedIn</option>
+                  <option value="indeed">Indeed</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="other">Other</label>
+                <input
+                  type="text"
+                  id="other"
+                  name="other"
+                  placeholder="Other"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Message -->
+          <fieldset>
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Your message"
+            ></textarea>
+          </fieldset>
+
+          <!-- Mailing List -->
+          <fieldset class="email-format">
+            <div class="mailing-list-row">
+              <label for="mailing-list">
+                I want to be added to your mailing list:
+                <input type="checkbox" id="mailing-list" name="mailing-list" />
+              </label>
+            </div>
+
+            <!-- Email format row -->
+            <div class="email-format-row">
+              <p>Choose email format:</p>
+              <label
+                ><input type="radio" name="email-format" value="html" />
+                HTML</label
+              >
+              <label
+                ><input type="radio" name="email-format" value="text" />
+                Text</label
+              >
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

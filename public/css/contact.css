@@ -14,7 +14,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.contact-form {
+#contact-form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -193,6 +193,15 @@ body {
   color: #000;
   text-decoration: none;
   font-weight: 500;
+}
+
+.error {
+  color: rgba(198, 0, 0, 0.804);
+  display: none;
+}
+
+.optional {
+  display: none;
 }
 
 /* ===== RESPONSIVE NAV ===== */

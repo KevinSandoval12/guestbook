@@ -1,3 +1,13 @@
+// How Did We Meet? Information
+let metBox = document.getElementById("meet");
+let otherBox = document.getElementById("other");
+let otherTitle = document.getElementById("otherTitle");
+
+let mailing = document.getElementById("mailing-list");
+let format = document.getElementById("email-format-row");
+let html = document.getElementById("html-button");
+let text = document.getElementById("text-button");
+
 // Runs when form is submitted
 document.getElementById("contact-form").onsubmit = () => {
   clearErrors();
@@ -7,16 +17,6 @@ document.getElementById("contact-form").onsubmit = () => {
   let fnameInput = document.getElementById("fname").value.trim();
   let lnameInput = document.getElementById("lname").value.trim();
   let emailInput = document.getElementById("email").value.trim();
-
-  // How Did We Meet? Information
-  let metBox = document.getElementById("meet");
-  let otherBox = document.getElementById("other");
-  let optionDisplay = document.getElementById("otherDisplay");
-
-  let mailing = document.getElementById("mailing-list");
-  let format = document.getElementById("email-format-row");
-  let html = document.getElementById("html-button");
-  let text = document.getElementById("text-button");
 
   let isValid = true;
   // have default style of error be "none"
@@ -45,24 +45,21 @@ document.getElementById("contact-form").onsubmit = () => {
     isValid = false;
     document.getElementById("meetErr").style.display = "inline";
   }
-
   if (metBox.value === "other") {
-    isValid = false;
-    otherBox.style.display = "inline";
     // if otherBox is empty
-    if (!otherBox) {
+    if (!otherBox.value.trim()) {
       isValid = false;
+      document.getElementById("otherErr").style.display = "inline";
     }
   }
 
-  // ADD A LISTENER OR A WAY TO APPEAR WHEN MAILING IS CHECKED
   if (mailing.checked) {
     format.style.display = "inline";
-  }
-
-  // if both html or text format buttons arent checked
-  if (!html.checked && !text.checked) {
-    isValid = false;
+    // if both html or text format buttons arent checked
+    if (!html.checked && !text.checked) {
+      isValid = false;
+      document.getElementById("formatErr").style.display = "inline";
+    }
   }
 
   return isValid;
@@ -75,3 +72,36 @@ function clearErrors() {
     error.style.display = "none";
   }
 }
+
+// function to change the otherBox display
+function metBoxDisplay(metBox, otherBox, otherTitle) {
+  if (metBox.value == "none") {
+    otherBox.style.display = "none";
+  }
+  if (metBox.value == "linkedin") {
+    otherTitle.value = "LinkedIn";
+    otherTitle.style.display = "block";
+    otherBox.style.display = "inline";
+    otherBox.placeholder = "LinkedIn";
+  }
+  if (metBox.value == "other") {
+    otherBox.style.display = "inline";
+    otherTitle.style.display = "block";
+  }
+}
+
+// function to change display of text format
+function textFormat(mailing, html, text) {
+  if (mailing.checked) {
+    format.style.display = "inline";
+  }
+  if (!mailing.checked) {
+    format.style.display = "none";
+  }
+}
+
+metBox.addEventListener("change", () =>
+  metBoxDisplay(metBox, otherBox, otherTitle)
+);
+
+mailing.addEventListener("change", () => textFormat(mailing, html, text));

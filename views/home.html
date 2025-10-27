@@ -62,10 +62,10 @@
 
           <!-- How Did We Meet Section -->
           <fieldset>
-            <legend>How did we meet? *</legend>
+            <legend>How did we meet?</legend>
             <div class="meet-container">
               <div class="col">
-                <label for="meet">Met From</label>
+                <label for="meet">Met From *</label>
                 <select id="meet" name="meet">
                   <option value="none">Please Select</option>
                   <option value="linkedin">LinkedIn</option>
@@ -77,7 +77,9 @@
                 >
               </div>
               <div class="col" class="optional" id="otherDisplay">
-                <label for="other">Other</label>
+                <label for="other" id="otherTitle" class="optional"
+                  >Other*</label
+                >
                 <input
                   type="text"
                   id="other"
@@ -85,6 +87,7 @@
                   name="other"
                   placeholder="Other"
                 />
+                <span id="otherErr" class="error">You must enter Other</span>
               </div>
             </div>
           </fieldset>
@@ -111,7 +114,7 @@
 
             <!-- Email format row -->
             <div id="email-format-row" class="optional">
-              <p>Choose email format:</p>
+              <p>Choose email format: *</p>
               <label
                 ><input
                   type="radio"
@@ -130,6 +133,7 @@
                 />
                 Text</label
               >
+              <span id="formatErr" class="error">You Must Select a Fomrat</span>
             </div>
           </fieldset>
 

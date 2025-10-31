@@ -14,7 +14,7 @@
   <body>
     <div id="contact">
       <div class="contact-container">
-        <form id="contact-form" action="" method="">
+        <form id="contact-form" action="submit-form" method="post">
           <h1>Contact Me!</h1>
           <fieldset>
             <legend>Personal Information</legend>
@@ -68,9 +68,9 @@
                 <label for="meet">Met From *</label>
                 <select id="meet" name="meet">
                   <option value="none">Please Select</option>
-                  <option value="linkedin">LinkedIn</option>
-                  <option value="indeed">Indeed</option>
-                  <option value="other">Other</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Indeed">Indeed</option>
+                  <option value="Other">Other</option>
                 </select>
                 <span id="meetErr" class="error"
                   >You Must Select How We Met</span
@@ -119,7 +119,7 @@
                 ><input
                   type="radio"
                   id="html-button"
-                  name="email-format"
+                  name="format"
                   value="html"
                 />
                 HTML</label
@@ -137,12 +137,14 @@
             </div>
           </fieldset>
 
-          <button type="submit" class="btn submit-btn">Submit</button>
+          <button type="submit" class="submit-btn">Submit</button>
         </form>
       </div>
     </div>
-    <a href="https://github.com/KevinSandoval12/guestbook"
-      >--->github repo <---</a
-    >
+    <footer>
+      <a href="https://github.com/KevinSandoval12/guestbook"
+        >--->GitHub Repo: https://github.com/KevinSandoval12/guestbook<---</a
+      >
+    </footer>
   </body>
 </html>

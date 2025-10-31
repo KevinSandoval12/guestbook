@@ -45,7 +45,7 @@ document.getElementById("contact-form").onsubmit = () => {
     isValid = false;
     document.getElementById("meetErr").style.display = "inline";
   }
-  if (metBox.value === "other") {
+  if (metBox.value === "Other") {
     // if otherBox is empty
     if (!otherBox.value.trim()) {
       isValid = false;
@@ -78,13 +78,13 @@ function metBoxDisplay(metBox, otherBox, otherTitle) {
   if (metBox.value == "none") {
     otherBox.style.display = "none";
   }
-  if (metBox.value == "linkedin") {
+  if (metBox.value == "LinkedIn") {
     otherTitle.value = "LinkedIn";
     otherTitle.style.display = "block";
     otherBox.style.display = "inline";
     otherBox.placeholder = "LinkedIn";
   }
-  if (metBox.value == "other") {
+  if (metBox.value == "Other") {
     otherBox.style.display = "inline";
     otherTitle.style.display = "block";
   }

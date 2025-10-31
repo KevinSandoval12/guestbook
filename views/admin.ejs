@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/mediaqueries.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="icon" href="/img/logo-sqaure.jpg" />
+    <script src="/js/script.js" defer></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="//cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/stylesheet.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css"
+    />
+
+    <title>Email Me!</title>
+  </head>
+  <body>
+    <div id="contact">
+      <div class="contact-container">
+        <h1>Contact Me!</h1>
+        <div id="center">
+          <h2>Admin Page</h2>
+          <br />
+          <p>I will get back to you as soon as possible</p>
+
+          <table id="contact-table">
+            <thead>
+              <tr class="headStyle">
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Met From</th>
+                <th>Message</th>
+                <th>Format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% contacts.forEach(contact => { %>
+              <tr>
+                <td><%= contact.fname %></td>
+                <td><%= contact.lname %></td>
+                <td><%= contact.email %></td>
+                <td><%= contact.meet %></td>
+                <td><%= contact.message %></td>
+                <td><%= contact.format %></td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://github.com/KevinSandoval12/guestbook"
+        >--->GitHub Repo: https://github.com/KevinSandoval12/guestbook<---</a
+      >
+    </footer>
+  </body>
+  <script defer>
+    let table = new DataTable("#contact-table");
+  </script>
+</html>

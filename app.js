@@ -6,10 +6,11 @@ const app = express();
 
 app.set("view engine", "ejs");
 
+app.set("views", path.join(__dirname, "views"));
+
 // Enable static files serving
 app.use(express.static("public"));
 
-app.use(express.urlencoded({ extended: true }));
 // Define the port number where our server will listen
 
 const contacts = [];
@@ -19,8 +20,6 @@ const PORT = 3006;
 // req: contains information about the incoming request
 // res: allows us to send back a response to the client
 app.get("/", (req, res) => {
-  // Send "Helow, World!" as a resonce to the client
-  // res.send('<h1> Welcome to Poppa\'s Pizza!</h1>');
   res.render("home");
 });
 
